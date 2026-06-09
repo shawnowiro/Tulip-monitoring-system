@@ -4,12 +4,13 @@
 **Course:** ICS 4111 — Embedded Systems & IoT
 **Semester:** April–July 2026
 
-Group Name: Wantam
-152066 - Owiro Shawn Ochieng
-168323 - Wambari Michael Rimu
-167074 - Jaafar Latifah Jepchirchir
-166152 - Precious Mwende Waweru
-157769 - Kariuki Darrel Kanyugo
+**Group Name:** Wantam
+**Group Members:**
+* 152066 - Owiro Shawn Ochieng
+* 168323 - Wambari Michael Rimu
+* 167074 - Jaafar Latifah Jepchirchir
+* 166152 - Precious Mwende Waweru
+* 157769 - Kariuki Darrel Kanyugo
 ---
 
 ## Table of Contents
