@@ -149,17 +149,16 @@ The following bill of materials (BOM) lists all hardware required to build the e
   - Pins: VCC, GND, IN (signal), COM, NO (Normally Open), NC (Normally Closed)
 
 ## 5. References
-
-[1] A. A. Umar, "Automatic Gas Leakage Monitoring System Using MQ-5 Sensor," *Review of Computer Engineering Research*, vol. 8, no. 2, pp. 64–75, 2021. https://doi.org/10.18488/JOURNAL.76.2021.82.64.75
-[2] Espressif Systems, *ESP32 Series Datasheet*, v4.6. Espressif Systems, 2024. [Online]. Available: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
-[3] Espressif Systems, *ESP32 Technical Reference Manual*, v5.3. Espressif Systems, 2024. [Online]. Available: https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf
-[4] Aosong Electronics Co., Ltd., *DHT22 AM2302 Digital-output Relative Humidity and Temperature Sensor — Product Manual*. Aosong, 2021. [Online]. Available: https://cdn-shop.adafruit.com/datasheets/DHT22.pdf
-[5] Zhengzhou Winsen Electronics Technology Co., Ltd., *MQ-5 Semiconductor Sensor for Combustible Gas — Product Manual v1.4*. Winsen, 2014. [Online]. Available: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-5%20(Ver1.4)%20-%20Manual.pdf
-[6] Sino Wealth Semiconductor Ltd., *SH1106 128×64 OLED Driver with Controller — Datasheet*. Sino Wealth, 2011. [Online]. Available: https://www.velleman.eu/downloads/29/infosheets/sh1106_datasheet.pdf
-[7] Components101, "5V Single Channel Relay Module — Pinout, Features & Datasheet," 2023. [Online]. Available: https://components101.com/switches/5v-single-channel-relay-module-pinout-features-applications-working-datasheet
-[8] Neroli Blume, "How to Take Care of Tulips: A Comprehensive Guide," *Neroli Blume Blog*, Feb. 2025. [Online]. Available: https://neroliblume.com/blogs/flower-facts/how-to-take-care-of-tulips
-[9] DryGair, "What are the Ideal Conditions for Greenhouse Tulips?" *DryGair Blog*, Apr. 2023. [Online]. Available: https://drygair.com/blog/greenhouse-tulips/ 
-[10] Kellogg Garden Organics, "Gardener's Guide to Planting Tulips," Dec. 2022. [Online]. Available: https://kellogggarden.com/blog/gardening/gardeners-guide-to-planting-tulips/
-[11] White Flower Farm, "Planting & Growing Tulips," 2026. [Online]. Available: https://www.whiteflowerfarm.com/how-to-grow-tulips
-[12] Espressif Systems, "ESP-NOW — ESP-IDF Programming Guide," 2024. [Online]. Available: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_now.html
+1. A. A. Umar, "Automatic Gas Leakage Monitoring System Using MQ-5 Sensor," *Review of Computer Engineering Research*, vol. 8, no. 2, pp. 64–75, 2021. https://doi.org/10.18488/JOURNAL.76.2021.82.64.75
+2. Espressif Systems, *ESP32 Series Datasheet*, v4.6. Espressif Systems, 2024. [Online]. Available: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+3. Espressif Systems, *ESP32 Technical Reference Manual*, v5.3. Espressif Systems, 2024. [Online]. Available: https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf
+4. Aosong Electronics Co., Ltd., *DHT22 AM2302 Digital-output Relative Humidity and Temperature Sensor — Product Manual*. Aosong, 2021. [Online]. Available: https://cdn-shop.adafruit.com/datasheets/DHT22.pdf
+5. Zhengzhou Winsen Electronics Technology Co., Ltd., *MQ-5 Semiconductor Sensor for Combustible Gas — Product Manual v1.4*. Winsen, 2014. [Online]. Available: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-5%20(Ver1.4)%20-%20Manual.pdf
+6. Sino Wealth Semiconductor Ltd., *SH1106 128×64 OLED Driver with Controller — Datasheet*. Sino Wealth, 2011. [Online]. Available: https://www.velleman.eu/downloads/29/infosheets/sh1106_datasheet.pdf
+7. Components101, "5V Single Channel Relay Module — Pinout, Features & Datasheet," 2023. [Online]. Available: https://components101.com/switches/5v-single-channel-relay-module-pinout-features-applications-working-datasheet
+8. Neroli Blume, "How to Take Care of Tulips: A Comprehensive Guide," *Neroli Blume Blog*, Feb. 2025. [Online]. Available: https://neroliblume.com/blogs/flower-facts/how-to-take-care-of-tulips
+9. DryGair, "What are the Ideal Conditions for Greenhouse Tulips?" *DryGair Blog*, Apr. 2023. [Online]. Available: https://drygair.com/blog/greenhouse-tulips/ 
+10. Kellogg Garden Organics, "Gardener's Guide to Planting Tulips," Dec. 2022. [Online]. Available: https://kellogggarden.com/blog/gardening/gardeners-guide-to-planting-tulips/
+11. White Flower Farm, "Planting & Growing Tulips," 2026. [Online]. Available: https://www.whiteflowerfarm.com/how-to-grow-tulips
+12. Espressif Systems, "ESP-NOW — ESP-IDF Programming Guide," 2024. [Online]. Available: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_now.html
 ---
