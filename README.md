@@ -15,86 +15,87 @@
 
 ## Table of Contents
 
-1. [Environmental Requirements for Rose Growth](#1-environmental-requirements-for-rose-growth)
+1. [Environmental Requirements for Tulip Growth](#1-environmental-requirements-for-tulip-growth)
 2. [Hardware Components](#2-hardware-components)
 3. [Component Datasheets](#3-component-datasheets)
-4. [Schematic Diagrams](#4-schematic-diagrams)
 5. [References](#5-references)
-
 ---
 
-## 1. Environmental Requirements for Rose Growth
-
-Roses (*Rosa* spp.) are among the most commercially significant flowers in Kenya, particularly in the Rift Valley highlands. Optimal growth requires careful monitoring of several environmental parameters.
-
-### 1.1 Environmental Parameters Table
-
-| # | Parameter | Optimal Value / Range | Notes |
-|---|-----------|----------------------|-------|
-| 1 | **Temperature** | 15°C – 28°C (day) / 10°C – 15°C (night) | Above 35°C causes heat stress; below 5°C risks frost damage |
-| 2 | **Relative Humidity** | 60% – 70% | High humidity (>80%) promotes fungal diseases such as powdery mildew |
-| 3 | **Soil Type** | Well-drained loamy soil or sandy loam | Clay soils should be amended with organic matter to improve drainage |
-| 4 | **Soil Moisture Content** | 50% – 70% of field capacity | Avoid waterlogging; drip irrigation recommended |
-| 5 | **Soil pH** | 6.0 – 6.5 (slightly acidic) | pH outside this range inhibits nutrient uptake |
-| 6 | **Sunlight Exposure** | 6 – 8 hours of direct sunlight per day | Full sun preferred; partial shade acceptable but reduces bloom count |
-
-### 1.2 Additional Notes
-
-- **LPG Gas Monitoring:** LPG (a mixture of methane, butane, and propane) is monitored as a safety measure in enclosed greenhouse environments where gas heating systems may be in use. Elevated LPG concentrations can be toxic to plants and hazardous to workers. Safe threshold: **< 1,000 ppm**.
-- Temperature and humidity are the most critical parameters for disease prevention in rose cultivation.
-
+## 1. Environmental Requirements for Tulip Growth
+ 
+### 1.1 Overview
+ 
+Tulips (*Tulipa* spp.) are cool-season spring-blooming bulbous perennials belonging to the family *Liliaceae*. Native to Central Asia and cultivated worldwide since the 16th century, tulips are prized for their vivid cup-shaped blooms and seasonal beauty. They are highly sensitive to temperature and require a well-defined cold vernalisation period — typically 12 to 14 weeks at 2 °C – 9 °C — for successful bulb development and bloom initiation [8].
+ 
+In controlled greenhouse environments, which are increasingly standard in commercial tulip production, continuous environmental monitoring is critical. Deviations in temperature, humidity, soil moisture, or gas composition can rapidly lead to crop loss through fungal disease, heat stress, root rot, or oxygen displacement at the root zone. The embedded monitoring system described in this deliverable is designed to track and respond to the six key parameters documented below.
+ 
 ---
-
+ 
+### 1.2 Environmental Parameters Reference Table
+ 
+| # | Parameter | Optimal Value / Range | Unit | Notes |
+|---|-----------|----------------------|------|-------|
+| 1 | **Temperature** | 10 – 15 °C (night) / 20 – 26 °C (day) | °C | Vernalisation (bulb cold period): 2 – 9 °C for 12–14 weeks. Above 30 °C causes bloom damage and drooping. Below −1 °C risks bulb frost damage [9][11] |
+| 2 | **Relative Humidity** | 50 % – 70 % | % RH | Humidity above 80 % promotes *Botrytis tulipae* (fire disease) and other fungal pathogens. Indoor/greenhouse target: 50 – 60 % for maximum flower lifespan [8][9] |
+| 3 | **Soil Type** | Light sandy loam, well-drained | — | Raised beds recommended. Sandy loam amended with organic matter is ideal. Heavy clay soils must be supplemented with decomposed compost or peat moss. Tulips are highly susceptible to root rot in waterlogged conditions [10][11] |
+| 4 | **Soil Moisture Content** | 40 % – 60 % of field capacity | % | Maintain consistent moisture without saturation. Drip irrigation preferred. Bulbs rot rapidly in soggy soils [8] |
+| 5 | **Soil pH** | 6.0 – 7.0 (slightly acidic to neutral) | pH | Optimal is 6.0 – 6.5. pH extremes outside this range inhibit bulb root growth and block nutrient uptake. Acidic or alkaline soils should be amended before planting [9][10] |
+| 6 | **Sunlight Exposure** | 6 – 8 hours of direct sunlight | h/day | Full sun preferred in temperate climates. Partial or dappled shade advisable in warmer environments to prevent heat stress. No artificial supplemental light is required for established bulbs [8][11] |
+| 7 | **LPG Concentration (Safety)** | < 1,000 ppm (alarm threshold) | ppm | Gas-fired heating systems used in greenhouses to maintain cold vernalisation temperatures may leak LPG (methane, butane, propane). Concentrations above 1,000 ppm are hazardous to personnel and displace oxygen critical to root respiration [1] |
+ 
+> **Note on LPG Monitoring:** In enclosed greenhouse environments where gas-fired heaters maintain the cool temperatures necessary for tulip vernalisation, monitoring for LPG leakage is a mandatory safety measure. Undetected leaks present fire and explosion hazards, and elevated gas concentrations can create anaerobic soil conditions that are fatal to tulip bulbs. The MQ-5 sensor in this design provides both analog concentration readings and a configurable digital threshold alarm output.
+ 
+---
+ 
 ## 2. Hardware Components
-
-The following components are required to build the embedded monitoring system:
-
-### 2.1 Microcontrollers & Communication Modules
-
-| # | Component | Quantity | Purpose |
-|---|-----------|----------|---------|
-| 1 | ESP32S DevKIT WiFi + BLE Module (30-pin) | 2 | Main microcontroller with wireless communication for data processing and transmission |
-
+ 
+The following bill of materials (BOM) lists all hardware required to build the embedded environmental monitoring device. Components are grouped by functional category.
+ 
+### 2.1 Microcontrollers
+ 
+| # | Component | Qty | Function |
+|---|-----------|-----|----------|
+| 1 | ESP32S DevKIT WiFi + BLE Module (30-pin) | 2 | Central processing unit for all designs. Handles sensor data acquisition, threshold evaluation, display output, and wireless data transmission via Wi-Fi (802.11 b/g/n) or Bluetooth 4.2 BLE |
+ 
 ### 2.2 Sensors
-
-| # | Component | Quantity | Purpose |
-|---|-----------|----------|---------|
-| 2 | DHT22 (AM2302) Temperature & Humidity Sensor | 1 | Measures ambient temperature and relative humidity |
-| 3 | MQ-5 LPG / Natural Gas / Coal Gas Sensor | 1 | Detects LPG, methane, propane, and butane concentrations in the air |
-| 4 | Capacitive Soil Moisture Sensor (v1.2 or v2.0) | 1 | Measures volumetric soil moisture content |
-| 5 | pH Sensor / Electrode Module (e.g., SEN0161) | 1 | Measures soil pH via solution |
-| 6 | LDR (Light Dependent Resistor) / BH1750 Light Sensor | 1 | Measures ambient light intensity (lux) as proxy for sunlight hours |
-
-### 2.3 Actuators & Output Devices
-
-| # | Component | Quantity | Purpose |
-|---|-----------|----------|---------|
-| 7 | 1.3" White IIC 128×64 OLED LCD Display (SH1106) | 1 | Displays real-time sensor readings locally |
-| 8 | 5V 1-Channel Low Level Trigger Relay Module | 1 | Controls external devices (e.g., irrigation pump, fan, heater) based on sensor thresholds |
-
-### 2.4 Passive Components
-
-| # | Component | Quantity | Purpose |
-|---|-----------|----------|---------|
-| 9 | 10 kΩ Resistor | 5 | Pull-up/pull-down resistors for sensors (DHT22, LDR) |
-| 10 | 4.7 kΩ Resistor | 2 | I²C pull-up resistors for SDA/SCL lines |
-| 11 | 1 kΩ Resistor | 2 | Current limiting resistors |
-| 12 | 100 nF (0.1 µF) Ceramic Capacitor | 4 | Decoupling capacitors for stable sensor power |
-| 13 | 10 µF Electrolytic Capacitor | 2 | Power supply filtering |
-| 14 | Voltage Divider (10 kΩ + 10 kΩ) | 1 | Scale MQ-5 analog output to ESP32 ADC input range (0–3.3V) |
-
+ 
+| # | Component | Qty | Function |
+|---|-----------|-----|----------|
+| 2 | DHT22 AM2302 Temperature & Humidity Sensor | 1 | Measures ambient air temperature (−40 °C to +80 °C, ±0.5 °C) and relative humidity (0–100 % RH, ±2 %) via single-wire digital protocol. Sampling interval: minimum 2 seconds |
+| 3 | MQ-5 LPG / Natural Gas / Coal Gas Sensor | 1 | Electrochemical sensor detecting LPG, methane (CH₄), propane (C₃H₈), and butane (C₄H₁₀) in the range 200–10,000 ppm. Outputs analog voltage (AO) and digital threshold (DO) |
+| 4 | Capacitive Soil Moisture Sensor v2.0 | 1 | Measures volumetric soil water content using capacitance principles. Corrosion-resistant compared to resistive-type sensors |
+| 5 | Analog pH Sensor / Electrode Module (DFRobot SEN0161) | 1 | Measures soil pH via buffer solution probe (range: pH 0–14, accuracy ±0.1 pH) |
+| 6 | BH1750 Digital Ambient Light Intensity Sensor | 1 | Measures illuminance in lux over I²C; used to log cumulative daily sunlight exposure hours |
+ 
+### 2.3 Output Devices & Actuators
+ 
+| # | Component | Qty | Function |
+|---|-----------|-----|----------|
+| 7 | 1.3" White IIC 128×64 OLED LCD Display (SH1106) | 1 | Displays real-time sensor readings locally. I²C interface; operates at 3.3 V |
+| 8 | 5V 1-Channel Low Level Trigger Relay Module | 1 | Switches external loads (irrigation pump, exhaust fan, or heater) based on threshold events. Controlled by ESP32 GPIO |
+ 
+### 2.4 Passive Electronic Components
+ 
+| # | Component | Qty | Function |
+|---|-----------|-----|----------|
+| 9 | 10 kΩ Resistor (¼ W, ±5 %) | 5 | Pull-up for DHT22 DATA line (×1); voltage divider for MQ-5 AO line (×2); signal conditioning (×2) |
+| 10 | 4.7 kΩ Resistor (¼ W, ±5 %) | 2 | I²C bus pull-up resistors on SDA and SCL lines (OLED + BH1750) |
+| 11 | 1 kΩ Resistor (¼ W, ±5 %) | 2 | Current-limiting for status LED indicators |
+| 12 | 100 nF (0.1 µF) Ceramic Capacitor | 4 | High-frequency decoupling capacitors placed close to sensor VCC pins to suppress power rail noise |
+| 13 | 10 µF Electrolytic Capacitor (16 V rated) | 2 | Bulk power supply filtering at 5 V and 3.3 V rails |
+ 
 ### 2.5 Prototyping Tools
-
-| # | Component | Quantity | Purpose |
-|---|-----------|----------|---------|
-| 15 | Breadboard (830-point) | 2 | Component prototyping without soldering |
-| 16 | Jumper Wires (Male-to-Male, Male-to-Female) | 40+ | Circuit connections on breadboard |
-| 17 | USB Micro-B Cable | 2 | Programming and power supply for ESP32 modules |
-| 18 | 5V DC Power Supply / Power Bank | 1 | Power source for the complete circuit |
-| 19 | Multimeter | 1 | Testing and debugging circuit voltages and continuity |
-
+ 
+| # | Component | Qty | Function |
+|---|-----------|-----|----------|
+| 14 | Full-size Breadboard (830-point) | 2 | Solderless prototyping platform for circuit assembly |
+| 15 | Jumper Wires — Male-to-Male | 20 | Breadboard-to-breadboard internal connections |
+| 16 | Jumper Wires — Male-to-Female | 20 | Breadboard-to-sensor module connections |
+| 17 | USB Micro-B Cable | 2 | ESP32 programming and 5 V power delivery |
+| 18 | 5 V DC Power Supply (minimum 2 A) | 1 | Primary power source for the complete assembled circuit |
+| 19 | Digital Multimeter | 1 | Voltage, resistance, and continuity verification during assembly and debugging |
+ 
 ---
-
 ## 3. Component Datasheets
 
 ### 3.1 1.3" White IIC 128×64 OLED LCD (SH1106 Driver)
