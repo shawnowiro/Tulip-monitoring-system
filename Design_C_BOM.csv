@@ -1,0 +1,16 @@
+Reference,Component,Quantity
+U1,DHT22 (AM2302) Temperature & Humidity Sensor,1
+U2,ESP32 DevKitC (ESP32-A),1
+U3,5V 1-Channel Relay Module,1
+U4,ESP32 DevKitC (ESP32-B),1
+U5,MQ-5 Gas Sensor Module,1
+R1,10kΩ Resistor (DHT22 Pull-up),1
+R2,1kΩ Resistor,1
+R3,2kΩ Resistor (Voltage Divider),1
+R4,1kΩ Resistor (Voltage Divider),1
+C1,100nF Capacitor,1
+C2,10µF Capacitor,1
+C3,10µF Capacitor,1
+PS1,5V Power Supply,1
+BB1,Breadboard,1
+JW,Jumper Wires,20
